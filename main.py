@@ -24,18 +24,12 @@ def ask():
         conversation_history)
 
     data = {
-        "model": "llama2",
+        "model": "eri",
         "stream": False,
-        "prompt": full_prompt,
+        "prompt": """Conversation avec Eri:""" + full_prompt,
         "max_tokens": 100,
-        "stop_sequence": "Fin de la conversation",
         "temperature": 0.5,
         "top_p": 1,
-        "frequency_penalty": 0,
-        "presence_penalty": 0,
-        "best_of": 1,
-        "n": 1,
-        "logit_bias": {"Fin de la conversation": -1000},
     }
 
     response = requests.post(url, headers=headers, data=json.dumps(data))
