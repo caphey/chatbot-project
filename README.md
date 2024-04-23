@@ -2,7 +2,7 @@
 
 Ce projet est une application de chatbot développée avec Python et React Native.
 
-![Screenshot projet](/ChatApp\img\screenshot.jpeg)
+![Screenshot projet](/ChatApp/img/screenshot.jpeg)
 
 ## Comment ça fonctionne
 
