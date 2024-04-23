@@ -19,14 +19,15 @@ conversation_history = []
 @app.route('/ask', methods=['POST'])
 def ask():
     user_message = request.json['question']
-    conversation_history.append(user_message)
-    full_prompt = user_message.join(
-        conversation_history)
+    # Ici, on peut ajouter le message de l'utilisateur à l'historique de la conversation
+    # conversation_history.append(user_message)
+    # full_prompt = user_message.join(
+    #     conversation_history)
 
     data = {
-        "model": "eri",
+        "model": "phi2",
         "stream": False,
-        "prompt": """Conversation avec Eri:""" + full_prompt,
+        "prompt": user_message,
         "max_tokens": 100,
         "temperature": 0.5,
         "top_p": 1,
@@ -38,7 +39,8 @@ def ask():
         response_text = response.text
         data = json.loads(response_text)
         actual_response = data["response"]
-        conversation_history.append(actual_response)
+        # Ici, on peut ajouter la réponse de l'IA à l'historique de la conversation
+        # conversation_history.append(actual_response)
         return (actual_response)
     else:
         print("Erreur:", response.status_code, response.text)

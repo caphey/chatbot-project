@@ -2,6 +2,8 @@
 
 Ce projet est une application de chatbot développée avec Python et React Native.
 
+![Screenshot projet](/ChatApp\img\screenshot.jpeg)
+
 ## Comment ça fonctionne
 
 Le chatbot fonctionne en deux parties : le backend et le frontend.
@@ -24,11 +26,13 @@ Le frontend, écrit en React Native, est l'interface utilisateur du chatbot. Il 
 
 ## Structure
 
-Le projet est divisé en deux parties principales :
+Le projet est divisé en trois parties principales :
 
 1. Le serveur backend, écrit en Python, situé dans le répertoire racine. Le point d'entrée principal est `main.py`.
 
 2. L'application mobile frontend, écrite en React Native, située dans le répertoire `ChatApp`. Le point d'entrée principal est `App.js`.
+
+3. La création d'un modèle à l'aide de [Ollama](https://ollama.com/) à partir d'un autre modèle existant et d'un prompt
 
 ## Installation
 
@@ -42,7 +46,23 @@ cd ChatApp
 npm install
 ```
 
-Exécution du projet
+Vous devez installer également [`Ollama`](https://ollama.com/) et le modèle indiqué dans le fichier `main.py`. L'exemple ci-dessous indique l'utilisation du modèle `phi2`.
+
+```python
+data = {
+        "model": "phi2",
+        "stream": False,
+        "prompt": user_message,
+        "max_tokens": 100,
+        "temperature": 0.5,
+        "top_p": 1,
+    }
+```
+
+Lien github Ollama : https://github.com/ollama/ollama
+
+## Exécution du projet
+
 Pour exécuter le serveur backend :
 
 ```bash

@@ -45,7 +45,7 @@ const App = () => {
     // Composant pour éviter que le clavier n'obstrue les éléments de l'interface
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <View style={styles.header}>
-        <Text style={styles.title}>Eri ChatBot Beta Test</Text>
+        <Text style={styles.title}>ChatBot Beta Test</Text>
       </View>
       <ScrollView style={styles.chat}>
         {chat.map((msg, index) => (
